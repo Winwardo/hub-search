@@ -3,7 +3,7 @@ Meteor.startup ->
 		user = Meteor.users.findOne(@userId)
 
 		if user? && isAdmin1(user.services.google.email)
-			Meteor.users.find()
+			Meteor.users.find({}, {sort: {email: 1}})
 		else
 			Meteor.users.find({}, {fields: {_id: 1}})
 
