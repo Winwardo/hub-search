@@ -1,8 +1,15 @@
 <template name="footer">
+	<div class="container">
 	<hr>
-	<div class="col-xs-12">
-		Designed and maintained by Topher Winward. <a href="http://winwardo.co.uk">Hire me</a>.<br>
-		Currently serving <em>{{usercount}}</em> total users.
+			Designed and maintained by Topher Winward. <a href="http://winwardo.co.uk">Hire me</a>.<br>
+			Currently serving <em>{{usercount}}</em> total users.
+			<a href='{{pathFor "feedback"}}'>Feedback</a>?
+			<a href='{{pathFor "admin"}}'>Admin</a>?
+			<a href='https://www.google.co.uk/search?q=pomsky&tbm=isch' target='_blank'>Pomsky</a>.
 	</div>
 	<div style="height: 32px;"></div>
+
+	<footer>
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	</footer>
 </template>

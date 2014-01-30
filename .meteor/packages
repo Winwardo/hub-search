@@ -4,10 +4,12 @@
 # but you can also edit it by hand.
 
 standard-app-packages
-autopublish
+#autopublish
 #insecure
 preserve-inputs
 jquery
 coffeescript
 accounts-ui
 accounts-google
+iron-router
+event-hooks

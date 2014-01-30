@@ -1,0 +1,23 @@
+<template name="layout">
+		<div class="container">
+			<a href='{{pathFor "home"}}'><h1>EYH-2014 hub search</h1></a>
+			<p>
+				Your one stop search for finding who's in your hub during EYH 2014.<br>
+			</p>
+			<div class="well well-sm">{{loginButtons}}</div>
+		</div>
+
+		<section class="header-image">
+		</section>
+
+		<div class="container">
+			{{#if currentUser}}
+				{{yield}}
+			{{else}}
+				You are not logged in! Please sign into your Sheffield email account.
+				<br>
+			{{/if}}
+		</div>
+
+ 		{{> footer}}
+</template>

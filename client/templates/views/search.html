@@ -1,68 +1,60 @@
 <template name="search">
-	<div class="row">
-		<div class="col-md-12">
-			{{#if hasValidAccount}}
-				<h2>My info</h2>
-				{{#unless hasAccount}}
-					Hi there - you're logged in as {{currentEmail}}, which is not  the list of EYH students. Maybe you're Sheffield staff? Either way, data for crwinward1@sheffield.ac.uk (Topher Winward) will be displayed instead. Have a great day!<br><br>
-				{{/unless}}
-				<table class="table table-striped table-bordered">
-					<thead>
-						<tr style="background-color: #eee">
-							<th>Name</span></th>
-							<th>Email</span></th>
-							<th>Building</th>
-							<th>Room / Hub</th>
-							<th>Group</th>
-							<th>Project</th>
-							<th>Info</th>
-						</tr>
-					</thead>
-					<tbody>
-						{{#with myUser}}
-						<tr>
-							<td>{{name}}</td>
-							<td>{{email}}</td>
-							<td><a href="{{buildingMap}}" target="_blank">{{building}}</a></td>
-							<td>{{room}} - {{hub}}</td>
-							<td>{{group}}</td>
-							<td>{{project}}</td>
-							<td><a href='http://yourehired.group.shef.ac.uk/projects.html#Project{{projNum}}' target='_blank'><span class="glyphicon glyphicon-asterisk"></span></a></td>
-						</tr>
-						{{/with}}
-					</tbody>
-				</table>			
+	<h2>My info</h2>
+	{{#unless isCurrentStudent}}
+		Hi there - you're logged in as {{userEmail}}, which is not  the list of EYH students. Maybe you're Sheffield staff? Either way, data for crwinward1@sheffield.ac.uk (Topher Winward) will be displayed instead. Have a great day!<br><br>
+	{{/unless}}
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr style="background-color: #eee">
+				<th>Name</span></th>
+				<th>Email</span></th>
+				<th>Building</th>
+				<th>Room / Hub</th>
+				<th>Group</th>
+				<th>Project</th>
+				<th>Info</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#with currentRecord}}
+			<tr>
+				<td>{{name}}</td>
+				<td>{{email}}</td>
+				<td><a href="{{buildingMap}}" target="_blank">{{building}}</a></td>
+				<td>{{room}} - {{hub}}</td>
+				<td>{{group}}</td>
+				<td>{{project}}</td>
+				<td><a href='http://yourehired.group.shef.ac.uk/projects.html#Project{{projNum}}' target='_blank'><span class="glyphicon glyphicon-asterisk"></span></a></td>
+			</tr>
+			{{/with}}
+		</tbody>
+	</table>			
 
-				<h2>My hub</h2>
-				<p>
-					Click on Department, Name, Email or Group to sort.<br>
-				</p>
+	<h2>My hub</h2>
+	<p>
+		Click on Department, Name, Email or Group to sort.<br>
+	</p>
 
-				<table class="table table-striped table-bordered">
-					<thead>
-						<tr style="background-color: #eee">
-							<th id="th-department">Department</th>
-							<th id="th-name">Name</th>
-							<th></th>
-							<th id="th-email">Email</th>
-							<th id="th-group">Group</th>
-						</tr>
-					</thead>
-					<tbody>
-					{{#each searchItems}}
-						<tr>
-							<td>{{department}}</td>
-							<td>{{name}}</td>
-							<td><a href="https://www.facebook.com/search/more/?q={{name}}" target="_blank"><img src="/img/fb.png" alt="Find on Facebook!" style="width: 24px;"></a></td>
-							<td><a href='mailto:{{email}}'>{{email}}</a></td>
-							<td>{{group}}</td>
-						</tr>
-					{{/each}}
-					</tbody>
-				</table>
-			{{else}}
-				Sorry, {{currentEmail}} is not a valid @sheffield.ac.uk account. Please sign out and back in again.
-			{{/if}}
-		</div>
-	</div>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr style="background-color: #eee">
+				<th id="th-department"><a href='#'>Department</a></th>
+				<th id="th-name"><a href='#'>Name</a></th>
+				<th></th>
+				<th id="th-email"><a href='#'>Email</a></th>
+				<th id="th-group"><a href='#'>Group</a></th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each searchItems}}
+			<tr>
+				<td>{{department}}</td>
+				<td>{{name}}</td>
+				<td><a href="https://www.facebook.com/search/more/?q={{name}}" target="_blank"><img src="/img/fb.png" alt="Find on Facebook!" style="width: 24px;"></a></td>
+				<td><a href='mailto:{{email}}'>{{email}}</a></td>
+				<td>{{group}}</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
 </template>

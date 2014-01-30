@@ -1,0 +1,8 @@
+<template name="home">	
+	{{#if hasValidEmail}}
+		{{> search}}
+	{{else}}
+		Sorry, {{userEmail}} is not a valid @sheffield.ac.uk account. Please sign out and back in again.
+	{{/if}}
+	<br>
+</template>

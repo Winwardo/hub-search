@@ -1,0 +1,50 @@
+<template name="adminSection">
+	{{#if adminAccount}}
+		<h1>Admin!</h1>
+
+		<legend>Feedback</legend>
+		{{#each feedback}}
+			<div class="well">
+				<table>
+					<tr>
+						<td>
+							<strong>From:</strong>
+						</td>
+						<td style="width: 5%x;"></td>
+						<td style="width: 90%;">
+							{{name}} - {{email}}
+							<a class="pull-right btn-delete" href='#'>&times;</a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Date:</strong>
+						</td>
+						<td style="width: 5%x;"></td>
+						<td style="width: 90%;">
+							{{date}}
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<strong>Message:</strong>
+						</td>
+						<td style="width: 5%;"></td>
+						<td>
+							{{message}}
+						</td>
+					</tr>
+				</table>
+			</div>
+		{{/each}}
+
+		<select class="form-control">
+		{{#each userNames}}
+			<option>{{services.google.email}}</option>
+		{{/each}}
+		</select>
+
+	{{else}}
+		<div class="alert alert-danger">Oi, you're not an admin! Go away.</div>
+	{{/if}}
+</template>
