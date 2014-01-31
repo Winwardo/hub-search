@@ -37,3 +37,8 @@ Meteor.startup ->
 			return Feedback.find({}, {sort: {date: -1}})
 		else
 			null
+
+	Meteor.publish "chat", ->
+		user = Meteor.users.findOne(@userId)
+		if user?
+			Chat.find()

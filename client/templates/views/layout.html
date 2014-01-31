@@ -1,13 +1,12 @@
 <template name="layout">
-		<div class="container">
-			<a href='{{pathFor "home"}}'><h1>EYH-2014 hub search</h1></a>
-			<p>
-				Your one stop search for finding who's in your hub during EYH 2014.<br>
-			</p>
-			<div class="well well-sm">{{loginButtons}}</div>
-		</div>
+		{{> navigation}}
+
+		
 
 		<section class="header-image">
+			<div class="container">
+				<div class="well well-sm">{{loginButtons}}</div>
+			</div>
 		</section>
 
 		<div class="container">

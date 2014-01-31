@@ -1,5 +1,6 @@
 Records = new Meteor.Collection("records");
 Feedback = new Meteor.Collection("feedback");
+Chat = new Meteor.Collection("chat");
 
 Meteor.startup(function(){
 	

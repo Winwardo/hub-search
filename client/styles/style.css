@@ -6,10 +6,10 @@
 
 .header-image {
 	background-image: url('/img/mappin.jpg');
-	min-height: 150px;
-	max-height: 150px;
-	margin-top: 8px;
+	min-height: 180px;
+	max-height: 180px;
+	/*margin-top: 8px;*/
 	margin-bottom: 8px;
 	background-attachment: fixed;
-	background-position: 0px -180px;
+	background-position: 0px -240px;
 }

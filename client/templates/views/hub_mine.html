@@ -1,0 +1,26 @@
+<template name="my_hub">
+	<h3>Hub details</h3>
+
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr style="background-color: #eee">
+				<th id="th-department"><a href='#'>Department</a></th>
+				<th id="th-name"><a href='#'>Name</a></th>
+				<th></th>
+				<th id="th-email"><a href='#'>Email</a></th>
+				<th id="th-group"><a href='#'>Group</a></th>
+			</tr>
+		</thead>
+		<tbody>
+		{{#each searchItems}}
+			<tr>
+				<td>{{department}}</td>
+				<td>{{name}}</td>
+				<td><a href="https://www.facebook.com/search/more/?q={{name}}" target="_blank"><img src="/img/fb.png" alt="Find on Facebook!" style="width: 24px;"></a></td>
+				<td><a href='mailto:{{email}}'>{{email}}</a></td>
+				<td>{{group}}</td>
+			</tr>
+		{{/each}}
+		</tbody>
+	</table>
+</template>
