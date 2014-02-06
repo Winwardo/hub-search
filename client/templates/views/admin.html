@@ -38,11 +38,18 @@
 			</div>
 		{{/each}}
 
+		<hr>
+
 		<select class="form-control">
 		{{#each userNames}}
 			<option>{{services.google.email}}</option>
 		{{/each}}
 		</select>
+
+		<hr>
+
+		<input class="form-control" type="text" id="force-project" value="{{project}}"><button id="btn-force-project" class="btn btn-info">Force project</button><br>
+		<input class="form-control" type="text" id="force-hub" value="{{hub}}"><button id="btn-force-hub" class="btn btn-info">Force hub</button><br>
 
 	{{else}}
 		<div class="alert alert-danger">Oi, you're not an admin! Go away.</div>

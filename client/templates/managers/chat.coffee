@@ -3,7 +3,7 @@ Template.chat_all.helpers
 
 Template.chat.helpers
 	messages: ->
-		Chat.find({hub: Session.get("chat_hub"), group: Session.get("chat_group")}, {sort: {date: -1}, limit: 20})
+		Chat.find({hub: Session.get("chat_hub"), group: Session.get("chat_group")}, {sort: {date: -1}, limit: 100})
 
 Template.chat.events
 	'submit form': (event, template) ->

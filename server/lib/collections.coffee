@@ -22,12 +22,15 @@ Meteor.startup ->
 		user = Meteor.users.findOne(@userId)
 
 		if user?
-			email = user.services?.google?.email
+			if isAdmin1(user.services.google.email)
+				Records.find()
+			else
+				email = user.services?.google?.email
 
-			currentRecord = Records.findOne({email: new RegExp(email, 'i')})
-			project = if currentRecord? then currentRecord.project else ""
+				currentRecord = Records.findOne({email: new RegExp(email, 'i')})
+				project = if currentRecord? then currentRecord.project else ""
 
-			Records.find({project: project})
+				Records.find({project: project})
 		else
 			null
 

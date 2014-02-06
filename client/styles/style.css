@@ -13,3 +13,9 @@
 	background-attachment: fixed;
 	background-position: 0px -240px;
 }
+
+.div-chat {
+	max-height: 400px;
+	overflow: auto;
+	border-bottom: 1px solid #ddd;
+}

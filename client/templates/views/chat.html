@@ -14,22 +14,17 @@
 				<button type="submit" class="btn btn-primary" id="btn-send" style="padding-top: 12px;">Send message</button>
 			</span>
 		</div>
-	</form>
-	<table class="table table-bordered">
-		<!-- <thead>
-			<tr style="background-color: #eee;">
-				<th>Name</th>
-				<th>Time</th>
-				<th style="width: 80%;">Message</th>
-			</tr>
-		</thead> -->
-		<tbody>
-		{{#each messages}}
-			<tr>
-				<td style="width: 40px;">{{time_short}}</td>
-				<td><strong>{{name}}</strong>: {{message}}</td>
-			</tr>
-		{{/each}}
-		</tbody>
-	</table>
+	</form>	
+	<div class="div-chat">
+		<table class="table table-bordered">
+			<tbody>
+			{{#each messages}}
+				<tr>
+					<td style="width: 40px;">{{time_short}}</td>
+					<td><strong>{{name}}</strong>: {{message}}</td>
+				</tr>
+			{{/each}}
+			</tbody>
+		</table>
+	</div>
 </template>

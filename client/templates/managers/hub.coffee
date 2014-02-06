@@ -1,6 +1,11 @@
 Template.my_hub.helpers
 	searchItems: ->
-		Records.find({}, {sort: Session.get("currentSort")})
+		Records.find({project: Session.get("userData").project}, {sort: Session.get("currentSort")})
+	name: ->
+		result = @name
+		if isAdmin()
+			result += " #{@_id} #{@hub}"
+		result
 
 Template.my_hub.events
 	'click #th-department': (e, template) -> Session.set("currentSort", {department: 1, name: 1})
