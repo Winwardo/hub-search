@@ -1,6 +1,6 @@
 Template.my_group.helpers
 	members: ->
-		Records.find({group: Session.get("userData").group, project: Session.get("userData").project}, {sort: Session.get("currentSort")})
+		Records.find({group: Session.get("userData")?.group, project: Session.get("userData")?.project}, {sort: Session.get("currentSort")})
 
 Template.my_group.events
 	'click #th-department': (e, template) -> Session.set("currentSort", {department: 1, name: 1})

@@ -1,6 +1,6 @@
 Template.my_hub.helpers
 	searchItems: ->
-		Records.find({project: Session.get("userData").project}, {sort: Session.get("currentSort")})
+		Records.find({project: Session.get("userData")?.project}, {sort: Session.get("currentSort")})
 	name: ->
 		result = @name
 		if isAdmin()
@@ -14,5 +14,5 @@ Template.my_hub.events
 	'click #th-group': (e, template) -> Session.set("currentSort", {group: 1, name: 1})
 
 Template.hub_main.helpers
-	chat_hub: -> Session.set("chat_hub", Session.get("userData").hub); Session.set("chat_group", "all")
-	hub_letter: -> Session.get("userData").hub
+	chat_hub: -> Session.set("chat_hub", Session.get("userData")?.hub); Session.set("chat_group", "all")
+	hub_letter: -> Session.get("userData")?.hub

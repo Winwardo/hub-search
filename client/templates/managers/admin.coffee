@@ -2,8 +2,8 @@ Template.adminSection.helpers
 	adminAccount: -> isAdmin()
 	feedback: -> Feedback.find()
 	userNames: -> Meteor.users.find()
-	project: -> Session.get("userData").project
-	hub: -> Session.get("userData").hub
+	project: -> Session.get("userData")?.project
+	hub: -> Session.get("userData")?.hub
 
 Template.adminSection.events
 	'click .btn-delete': (e, template) ->
